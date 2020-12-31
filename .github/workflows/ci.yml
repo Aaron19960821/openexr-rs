@@ -20,7 +20,7 @@ jobs:
     steps:
       # Make sure OpenEXR is installed.
       - run: sudo apt-get update
-      - run: sudo apt-get -y install libopenexr21-dev
+      - run: sudo apt-get -y install libopenexr23-dev
 
       # Get a checkout and rust toolchain.
       - uses: actions/checkout@v2
@@ -40,7 +40,7 @@ jobs:
     steps:
       # Make sure OpenEXR is installed.
       - run: sudo apt-get update
-      - run: sudo apt-get -y install libopenexr21-dev
+      - run: sudo apt-get -y install libopenexr23-dev
 
       # Get a checkout and rust toolchain.
       - uses: actions/checkout@v2

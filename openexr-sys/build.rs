@@ -23,7 +23,7 @@ fn main() {
             include_paths.push(PathBuf::from(&format!("{}/include/OpenEXR", path)));
         } else {
             // There's no enviroment variable, so use pkgconfig to find
-            // the libs
+            // the libs.
             let paths = pkg_config::Config::new()
                 .atleast_version("2.0.0")
                 .probe("OpenEXR")
@@ -49,6 +49,8 @@ fn main() {
             println!("cargo:rustc-link-lib=static=Half");
             include_paths.push(PathBuf::from(&format!("{}/include/OpenEXR", path)));
         } else {
+            // There's no enviroment variable, so use pkgconfig to find
+            // the libs.
             let paths = pkg_config::Config::new()
                 .atleast_version("2.0.0")
                 .cargo_metadata(false) // OpenEXR already pulls in all the flags we need
